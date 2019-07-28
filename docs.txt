@@ -1,0 +1,23 @@
+Exemplos de chamada rest
+http://172.16.97.128:5000/bikes
+
+Chamadas do Spark Submit
+spark2-submit --master local[4] DivvyBikes/divvy_bikes/run_ingestion.py
+spark2-submit --master local[4] DivvyBikes/divvy_bikes/run_training.py
+spark2-submit --master local[4] --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.0 DivvyBikes/divvy_bikes/run_predict.py
+python DivvyBikes/divvy_bikes/app.py
+
+Listar tópicos
+kafka-topics --list --zookeeper quickstart.cloudera:2181
+
+Criar tópicos
+kafka-topics --zookeeper quickstart.cloudera:2181 --create --topic bikes --partitions 1 --replication-factor 1
+
+Informações de diretórios
+kafka-log-dirs --describe --bootstrap-server quickstart.cloudera:9092
+
+Verificação da posição do offset
+kafka-consumer-groups --bootstrap-server localhost:9092 --group bikes_group --describe
+
+Kafka
+offsets.topic.replication.factor mudar para 1

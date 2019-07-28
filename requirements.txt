@@ -1,0 +1,4 @@
+holidays
+requests
+flask
+kafka-python
